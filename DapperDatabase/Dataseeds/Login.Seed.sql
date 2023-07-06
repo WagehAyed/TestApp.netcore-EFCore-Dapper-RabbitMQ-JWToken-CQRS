@@ -1,8 +1,11 @@
 ﻿Merge Login As Target
 using (
 select * from (
-SELECT TOP 20 'user' + CAST(ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) as nvarchar) + '@example.com' as Email, 'password' + CAST(ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) as nvarchar)  as Password
-FROM sys.all_columns
+SELECT   'user' + CAST(ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) as nvarchar) + '@example.com' as Email, 'password' + CAST(ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) as nvarchar)  as Password
+FROM sys.all_columns 
+order by object_id
+OFFSET 20 ROWS
+FETCH NEXT 80 ROWS ONLY
 ) as t
 ) as source
 on (source.Email=target.Email)
