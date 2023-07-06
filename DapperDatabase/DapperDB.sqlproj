@@ -66,10 +66,14 @@
     <None Include="Dataseeds\Login.Seed.sql" />
     <Build Include="Tables\Department.sql" />
     <Build Include="Tables\Employee.sql" />
+    <Build Include="Tables\Product.sql" />
+    <Build Include="Tables\Category.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Dataseeds\_Seed.sql" />
     <None Include="Dataseeds\Employee.Seed.sql" />
+    <None Include="Dataseeds\Product.Seed.sql" />
+    <None Include="Dataseeds\Category.Seed.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Dataseeds\Department.Seed.sql" />
