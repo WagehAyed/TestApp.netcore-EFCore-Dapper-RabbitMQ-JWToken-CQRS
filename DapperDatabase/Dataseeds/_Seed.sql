@@ -10,3 +10,5 @@ Post-Deployment Script Template
 --------------------------------------------------------------------------------------
 */
 :r .\Login.seed.sql
+:r .\Department.Seed.sql
+:r .\Employee.Seed.sql

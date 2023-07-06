@@ -1,4 +1,4 @@
-﻿namespace DapperCRUD
+﻿namespace DapperCRUD.Models
 {
     public class Login
     {

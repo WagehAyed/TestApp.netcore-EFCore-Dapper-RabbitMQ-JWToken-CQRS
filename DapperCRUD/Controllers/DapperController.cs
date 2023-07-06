@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using DapperCRUD.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -62,6 +63,33 @@ namespace DapperCRUD.Controllers
             }
             return result;
         }
+
+
+        [HttpGet("Employees")]
+        public async Task<IEnumerable<Employee>> GetEmployees()
+        {
+            IEnumerable <Employee> employees= null;
+            using (SqlConnection connection=new SqlConnection(Connection))
+            {
+                var sql = "SELECT e.EmployeeID, e.Name as 'employeeName', e.DepartmentID, d.DepartmentID, d.Name  as 'departmentName'" +
+            "FROM Employee e INNER JOIN Department d ON e.DepartmentID = d.DepartmentID ";
+
+                  employees =await connection.QueryAsync<Employee, Department, Employee>(
+                    sql,
+                    (emp, dept) =>
+                    {
+                        emp.Department = dept;
+                        return emp;
+                    }, 
+                    splitOn: "DepartmentID"
+                );
+            }
+            return employees;
+        }
+
+
+       
+
 
     }
 }

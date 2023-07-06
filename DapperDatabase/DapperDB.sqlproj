@@ -64,8 +64,17 @@
     <Build Include="StoredProcedures\LoginProcedure.sql" />
     <Build Include="Tables\Login.sql" />
     <None Include="Dataseeds\Login.Seed.sql" />
+    <Build Include="Tables\Department.sql" />
+    <Build Include="Tables\Employee.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Dataseeds\_Seed.sql" />
+    <None Include="Dataseeds\Employee.Seed.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Dataseeds\Department.Seed.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="DapperDB.refactorlog" />
   </ItemGroup>
 </Project>
