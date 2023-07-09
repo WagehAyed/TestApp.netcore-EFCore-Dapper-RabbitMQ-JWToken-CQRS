@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using DapperCRUD.Models;
+using Mapster;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace DapperCRUD.Controllers
     [ApiController]
     public class DapperController : ControllerBase
     {
-        string Connection = "Data Source=WAGEHAYED\\MS22;Initial Catalog=DapperDB;User Id=sa;Password=P@ssw0rd;";
+        string Connection = "Data Source=LAPWAGEH\\MSS19;Initial Catalog=DapperDB;User Id=sa;Password=P@ssw0rd;";
         [HttpGet("Logins")]
         public async Task<IEnumerable<Login>> Get()
         {
@@ -120,8 +121,22 @@ namespace DapperCRUD.Controllers
 
                 return false;
         }
-       
 
+
+        // Mappster
+        [HttpGet("MappPerson")]
+        public async Task<List<PersonDTO>> GetPersonDTO()
+        {
+            using (SqlConnection connection=new SqlConnection(Connection))
+            {
+                var sqlScript = "select * from Person";
+                var _person = await connection.QueryAsync<Person>(sqlScript);
+                var _personDTO = _person.Adapt<List<PersonDTO>>();
+                return _personDTO;
+            }
+
+            return null;
+        }
 
     }
 }

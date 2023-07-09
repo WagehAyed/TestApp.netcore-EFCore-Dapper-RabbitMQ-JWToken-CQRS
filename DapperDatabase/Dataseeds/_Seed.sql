@@ -14,3 +14,4 @@ Post-Deployment Script Template
 :r .\Employee.Seed.sql 
 --:r .\Category.Seed.sql
 --:r .\Product.Seed.sql
+:r .\AdressAndPerson.Seed.sql

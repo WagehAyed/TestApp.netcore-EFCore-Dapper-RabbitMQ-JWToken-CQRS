@@ -68,12 +68,15 @@
     <Build Include="Tables\Employee.sql" />
     <Build Include="Tables\Product.sql" />
     <Build Include="Tables\Category.sql" />
+    <Build Include="Tables\Person.sql" />
+    <Build Include="Tables\Address.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Dataseeds\_Seed.sql" />
     <None Include="Dataseeds\Employee.Seed.sql" />
     <None Include="Dataseeds\Product.Seed.sql" />
     <None Include="Dataseeds\Category.Seed.sql" />
+    <None Include="Dataseeds\AdressAndPerson.Seed.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Dataseeds\Department.Seed.sql" />
