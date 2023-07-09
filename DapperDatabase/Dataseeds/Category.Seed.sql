@@ -1,4 +1,4 @@
-﻿ INSERT INTO [dbo].[Category] (  [CategoryName], [Description])
+﻿ INSERT INTO [dbo].[Category] ([CategoryName], [Description])
 VALUES (  'Beverages', 'Soft drinks, coffees, teas, beers, and ales'),
 ( 'Condiments', 'Sweet and savory sauces, relishes, spreads, and seasonings'),
 ( 'Confections', 'Desserts, candies, and sweet breads'),

@@ -15,7 +15,7 @@ namespace DapperCRUD.Controllers
     [ApiController]
     public class DapperController : ControllerBase
     {
-        string Connection = "Data Source=LAPWAGEH\\MSS19;Initial Catalog=DapperDB;User Id=sa;Password=P@ssw0rd;";
+        string Connection = "Data Source=WAGEHAYED\\MS22;Initial Catalog=DapperDB;User Id=sa;Password=P@ssw0rd;";
         [HttpGet("Logins")]
         public async Task<IEnumerable<Login>> Get()
         {
@@ -93,16 +93,28 @@ namespace DapperCRUD.Controllers
         {
             using (SqlConnection connection=new SqlConnection(Connection))
             {
-                var sqlScript = " INSERT INTO [dbo].[Category] (  [CategoryName], [Description]) VALUES " +
-                    "(  'Beverages', 'Soft drinks, coffees, teas, beers, and ales')," +
-                    "( 'Condiments', 'Sweet and savory sauces, relishes, spreads, and seasonings')," +
-                    "( 'Confections', 'Desserts, candies, and sweet breads');";
+                var sqlScript = " INSERT INTO [dbo].[Category] ([CategoryName], [Description]) VALUES " +
+                    "(  '', 'Soft drinks, coffees, teas, beers, and ales')," +
+                    "( '', 'Sweet and savory sauces, relishes, spreads, and seasonings')," +
+                    "( '', '');";
                 //"( 'Dairy Products', 'Cheeses'),\"+" +
                 //"( 'Grains/Cereals', 'Breads, crackers, pasta, and cereal'), " +
                 //"( 'Meat/Poultry', 'Prepared meats')," +
                 //"( 'Produce', 'Dried fruit and bean curd')," +
                 //"( 'Seafood', 'Seaweed and fish');";
-                var result = connection.BulkMerge("Category", sqlScript);
+                //DapperPlusManager.Entity<Category>("Category_IgnoreAditProperty")
+                //    .IgnoreOnMergeUpdate(x => new { x.CategoryName, x.Description });
+
+                 var categories= new List<Category>
+                 {
+                     new Category{CategoryId=22,CategoryName="Beverages",Description="Soft drinks, coffees, teas, beers, and ales" },
+                     new Category{CategoryId=23,CategoryName="Condiments",Description="Sweet and savory sauces, relishes, spreads, and seasonings" },
+                     new Category{CategoryId=24,CategoryName="Confections",Description="Desserts, candies, and sweet breads" },
+                     new Category{CategoryId=25,CategoryName="Dairy Products",Description="Cheeses" }
+
+                 };
+                var result = connection.BulkMerge("Category", categories);
+                return result.CurrentItem.Any();    
             }
 
 
