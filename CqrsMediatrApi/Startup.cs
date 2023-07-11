@@ -1,3 +1,6 @@
+using CqrsMediatrApi.Behaviours;
+using CqrsMediatrApi.Models;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -12,7 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DapperCRUD
+namespace CqrsMediatrApi
 {
     public class Startup
     {
@@ -26,13 +29,15 @@ namespace DapperCRUD
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.RegisterMapsterConfiguration();
+ 
+            services.AddMediatR(typeof(Program));
+            services.AddSingleton<FakeDataStore>();
+            services.AddSingleton(typeof(IPipelineBehavior<,>),typeof(LoggingBehavior<,>));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "DapperCRUD", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "CqrsMediatrApi", Version = "v1" });
             });
-           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,7 +47,7 @@ namespace DapperCRUD
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DapperCRUD v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CqrsMediatrApi v1"));
             }
 
             app.UseHttpsRedirection();

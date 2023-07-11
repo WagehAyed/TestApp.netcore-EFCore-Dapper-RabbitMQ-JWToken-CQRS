@@ -29,13 +29,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JWT", "JWT", "{42178CE1-E8A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestJWTApi", "TestJWTApi\TestJWTApi.csproj", "{9A88781F-7476-47B9-80BC-08CB819FCE7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisTestApi", "RedisTestApi\RedisTestApi.csproj", "{8FEDC282-FC49-41F1-BF5A-088E02EE99F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedisTestApi", "RedisTestApi\RedisTestApi.csproj", "{8FEDC282-FC49-41F1-BF5A-088E02EE99F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperCRUD", "DapperCRUD\DapperCRUD.csproj", "{C264BE05-2E30-467C-9757-D2170F28C834}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DapperCRUD", "DapperCRUD\DapperCRUD.csproj", "{C264BE05-2E30-467C-9757-D2170F28C834}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Databases", "Databases", "{469DCDA6-CB2D-4767-90B9-5390D4B38F5D}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DapperDB", "DapperDatabase\DapperDB.sqlproj", "{7047EE7B-6002-4A4D-AD65-5D5469D40931}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CqrsMediatrApi", "CqrsMediatrApi\CqrsMediatrApi.csproj", "{83A567FA-818D-4AD7-861C-97AD9C13CC22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,6 +99,10 @@ Global
 		{7047EE7B-6002-4A4D-AD65-5D5469D40931}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7047EE7B-6002-4A4D-AD65-5D5469D40931}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7047EE7B-6002-4A4D-AD65-5D5469D40931}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{83A567FA-818D-4AD7-861C-97AD9C13CC22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83A567FA-818D-4AD7-861C-97AD9C13CC22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83A567FA-818D-4AD7-861C-97AD9C13CC22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83A567FA-818D-4AD7-861C-97AD9C13CC22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
