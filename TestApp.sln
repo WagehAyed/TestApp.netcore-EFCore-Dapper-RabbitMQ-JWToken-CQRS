@@ -37,7 +37,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Databases", "Databases", "{
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DapperDB", "DapperDatabase\DapperDB.sqlproj", "{7047EE7B-6002-4A4D-AD65-5D5469D40931}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CqrsMediatrApi", "CqrsMediatrApi\CqrsMediatrApi.csproj", "{83A567FA-818D-4AD7-861C-97AD9C13CC22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CqrsMediatrApi", "CqrsMediatrApi\CqrsMediatrApi.csproj", "{83A567FA-818D-4AD7-861C-97AD9C13CC22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMQ.SenderApplication", "RabbitMQ.SenderApplication\RabbitMQ.SenderApplication.csproj", "{DF60FE88-6979-4A78-A310-DCEBB01938A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMQ.RecieverApplication", "RabbitMQ.RecieverApplication\RabbitMQ.RecieverApplication.csproj", "{AAA7B83C-11C0-4F55-ADA4-383F230F2F8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMQ.CommonWork", "RabbitMQ.CommonWork\RabbitMQ.CommonWork.csproj", "{3E89D643-97B9-4A98-A6A3-5FAAC25035C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -103,6 +109,18 @@ Global
 		{83A567FA-818D-4AD7-861C-97AD9C13CC22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83A567FA-818D-4AD7-861C-97AD9C13CC22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83A567FA-818D-4AD7-861C-97AD9C13CC22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF60FE88-6979-4A78-A310-DCEBB01938A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF60FE88-6979-4A78-A310-DCEBB01938A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF60FE88-6979-4A78-A310-DCEBB01938A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF60FE88-6979-4A78-A310-DCEBB01938A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAA7B83C-11C0-4F55-ADA4-383F230F2F8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAA7B83C-11C0-4F55-ADA4-383F230F2F8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAA7B83C-11C0-4F55-ADA4-383F230F2F8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAA7B83C-11C0-4F55-ADA4-383F230F2F8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E89D643-97B9-4A98-A6A3-5FAAC25035C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E89D643-97B9-4A98-A6A3-5FAAC25035C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E89D643-97B9-4A98-A6A3-5FAAC25035C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E89D643-97B9-4A98-A6A3-5FAAC25035C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
